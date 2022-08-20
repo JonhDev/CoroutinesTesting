@@ -12,7 +12,7 @@ class ProfileViewModel(
     private val getUserInformationUseCase: GetUserInformationUseCase = GetUserInformationUseCase()
 ) : ViewModel() {
 
-    private val _state = MutableLiveData<ProfileState>(ProfileState.Loading)
+    private val _state = MutableLiveData<ProfileState>()
     val state: LiveData<ProfileState> = _state
 
     init {
