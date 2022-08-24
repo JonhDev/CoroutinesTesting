@@ -1,12 +1,10 @@
 package com.jonhbravo.coroutinestesting.data
 
-import com.jonhbravo.coroutinestesting.data.UserRepository
 import com.jonhbravo.coroutinestesting.models.AccountInformation
 import com.jonhbravo.coroutinestesting.models.User
 import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.test.currentTime
 import kotlinx.coroutines.test.runTest
-import org.junit.Assert.assertTrue
+import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Test
 
@@ -36,15 +34,13 @@ class UserRepositoryTests {
     fun `should get an expected user when call to the service`() = runTest {
         val user = userRepository.getUser()
 
-        println(currentTime) //Running in same thread
-        assertTrue(user == expectedUser)
+        assertEquals(user, expectedUser)
     }
 
     @Test
     fun `should get an expected account information when call to the service`() = runTest {
         val accountInformation = userRepository.getAccountInformation()
 
-        println(currentTime) //Running in same thread
-        assertTrue(accountInformation == expectedAccountInformation)
+        assertEquals(accountInformation, expectedAccountInformation)
     }
 }

@@ -43,8 +43,7 @@ class UserInformationUseCasesTests {
 
         val information = getInformationUseCase()
 
-        println(currentTime)
-        Assert.assertTrue(expectedInformation == information)
+        Assert.assertEquals(expectedInformation, information)
     }
 
     @Test
@@ -64,7 +63,7 @@ class UserInformationUseCasesTests {
         val information = getInformationUseCase()
 
         Assert.assertEquals(mockDelay, currentTime)
-        Assert.assertTrue(expectedInformation == information)
+        Assert.assertEquals(expectedInformation, information)
     }
 
 }
